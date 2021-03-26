@@ -9,6 +9,6 @@ class LinearRegressor:
         self.y = y
 
     def get_model(self):
-        model = LinearRegression(normalize=True,copy_X=False,n_jobs=-1)
-        model.fit(self.X,self.y)
+        model = LinearRegression(normalize=True, n_jobs=-1, positive=True)
+        model.fit(self.X, self.y)
         return model

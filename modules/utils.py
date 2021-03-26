@@ -16,6 +16,6 @@ class Utils:
         mae = mean_absolute_error(y_val,val_preds)
         return mae
 
-    def write_results_to_csv(self,preds,target_col,file_name):
-        prediction = pd.DataFrame(preds,columns=[target_col]).to_csv(os.path.join(self.output_dir,f"{file_name}.csv"))
+    def write_results_to_csv(self,preds,id_cols,target_col,file_name):
+        prediction = pd.DataFrame(preds,index=id_cols,columns=[target_col]).to_csv(os.path.join(self.output_dir,f"{file_name}.csv"))
 
