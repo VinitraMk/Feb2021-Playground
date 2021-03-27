@@ -32,6 +32,7 @@ else:
     X_train, X_test = preprocessor.handle_missing_values()
 
 #model validation
+'''
 print('Building Linear Regressor model')
 linear_regressor = LinearRegressor(X_train,y_train).get_model()
 mae_linear_regressor = utils.get_mae(linear_regressor,X_valid,y_valid)
@@ -39,8 +40,8 @@ print("Mean squared error for a linear regressor: ",mae_linear_regressor)
 print("Saving model preds to csv...")
 test_preds = linear_regressor.predict(X_test)
 utils.write_results_to_csv(test_preds,id_cols,"target","linear_regressor_preds")
-
 '''
+
 print('\n\nBuidling Random Forest Regressor')
 random_forest = RandomForest(X_train,y_train).get_model()
 mae_rf_regressor = utils.get_mae(random_forest,X_valid,y_valid)
@@ -48,4 +49,3 @@ print("Mean squared error for a random forest regressor: ",mae_rf_regressor)
 print("Saving model preds to csv...")
 test_preds = random_forest.predict(X_test)
 utils.write_results_to_csv(test_preds,id_cols,"target","random_forest_preds")
-'''

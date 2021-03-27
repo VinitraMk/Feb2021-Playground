@@ -9,6 +9,6 @@ class RandomForest:
         self.y = y
 
     def get_model(self):
-        model = RandomForestRegressor(random_state=42)
+        model = RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1)
         model.fit(self.X,self.y)
         return model
