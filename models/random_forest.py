@@ -1,4 +1,5 @@
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.tree import DecisionTreeRegressor
 
 class RandomForest:
     X = None
@@ -9,6 +10,6 @@ class RandomForest:
         self.y = y
 
     def get_model(self):
-        model = RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1)
+        model = RandomForestRegressor(n_estimators=800, max_features='log2', max_depth=20, min_samples_split=2, random_state=42, n_jobs=-1)
         model.fit(self.X,self.y)
         return model

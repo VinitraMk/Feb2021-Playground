@@ -42,7 +42,7 @@ test_preds = linear_regressor.predict(X_test)
 utils.write_results_to_csv(test_preds,id_cols,"target","linear_regressor_preds")
 '''
 
-print('\n\nBuidling Random Forest Regressor')
+print('Buidling Random Forest Regressor')
 random_forest = RandomForest(X_train,y_train).get_model()
 mae_rf_regressor = utils.get_mae(random_forest,X_valid,y_valid)
 print("Mean squared error for a random forest regressor: ",mae_rf_regressor)
